@@ -1,0 +1,14 @@
+services:
+    zertz.admin.blog.photo:
+        class: Zertz\Blog\MediaBundle\Admin\PhotoAdmin
+        arguments: [null, Zertz\Blog\MediaBundle\Entity\Photo, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [XPen\PhotoBundle]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blog, label: Photos }
+
+    zertz.blog.photo_manager:
+        class: Zertz\Blog\MediaBundle\Entity\Manager\PhotoManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: Zertz\Blog\MediaBundle\Entity\Photo

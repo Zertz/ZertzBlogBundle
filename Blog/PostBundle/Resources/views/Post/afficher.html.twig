@@ -1,0 +1,20 @@
+{# src/Zertz/BlogBundle/Resources/views/Blog/nouveau.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block contenu %}
+    <div class="case">
+        <h3>{{ article.titre }}</h3>
+        <hr />
+        <div>{{ article.contenu|raw }}</div>
+        <hr />
+    </div>
+    <div class="case">
+        <h3>Tags</h3>
+        <hr />
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+{% endblock %}

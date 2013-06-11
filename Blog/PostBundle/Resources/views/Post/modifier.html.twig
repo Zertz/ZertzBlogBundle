@@ -1,0 +1,12 @@
+{# src/Zertz/BlogBundle/Resources/views/Post/modifer.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Mon article{% endblock %}
+
+{% block contenu %}
+    <h3>Modifier l'article "{{ article.titre }}"</h3>
+    <form action="{{ path('blog_modifier_article', {id: article.id, 'slug': article.slug}) }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <input type="submit" />
+    </form>
+{% endblock %}

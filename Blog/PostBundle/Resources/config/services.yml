@@ -1,0 +1,47 @@
+services:
+    zertz.admin.blog.post:
+        class: Zertz\Blog\PostBundle\Admin\PostAdmin
+        arguments: [null, Zertz\Blog\PostBundle\Entity\Post, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [Zertz\Blog\PostBundle]]
+            - [setSecurityContext, [@security.context]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blog, label: Posts }
+
+    zertz.admin.blog.sources:
+        class: Zertz\Blog\PostBundle\Admin\SourceAdmin
+        arguments: [null, Zertz\Blog\PostBundle\Entity\Source, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [Zertz\Blog\PostBundle]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blog, label: Sources }
+
+    zertz.blog.post_manager:
+        class: Zertz\Blog\PostBundle\Entity\Manager\PostManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: Zertz\Blog\PostBundle\Entity\Post
+
+    zertz.admin.blog.postHasMedias:
+        class: Zertz\Blog\PostBundle\Admin\postHasMediasAdmin
+        arguments: [null, Zertz\Blog\PostBundle\Entity\postHasMedias, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [Zertz\Blog\PostBundle]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Hidden, label: postHasMedias }
+
+    zertz.admin.blog.postHasSources:
+        class: Zertz\Blog\PostBundle\Admin\postHasSourcesAdmin
+        arguments: [null, Zertz\Blog\PostBundle\Entity\postHasSources, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [Zertz\Blog\PostBundle]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Hidden, label: postHasSources }
+
+    zertz.admin.blog.postHasTags:
+        class: Zertz\Blog\PostBundle\Admin\postHasTagsAdmin
+        arguments: [null, Zertz\Blog\PostBundle\Entity\postHasTags, 'SonataAdminBundle:CRUD']
+        calls:
+            - [setTranslationDomain, [Zertz\Blog\SortBundle]]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Hidden, label: postHasTags }

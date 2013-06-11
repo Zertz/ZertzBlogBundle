@@ -1,0 +1,18 @@
+{# src/Zertz/BlogBundle/Resources/views/Blog/nouveau.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block contenu %}
+    <div class="case">
+        <h3>Composer un nouvel article<span class="right">Vous pouvez sauvegarder et continuer plus tard</span></h3>
+        <hr />
+        <form action="{{ path('blog_ajouter_article') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_label(form.titre) }} {{ form_errors(form.titre) }}<br />
+            {{ form_widget(form.titre) }}
+            
+            {{ form_rest(form) }}
+            <input type="submit" />
+        </form>
+    </div>
+{% endblock %}
