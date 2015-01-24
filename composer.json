@@ -1,0 +1,30 @@
+{
+    "name": "zertz/blog-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony ZertzBlogBundle",
+    "keywords": ["Blog"],
+    "homepage": "http://github.com/Zertz/ZertzBlogBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pier-Luc Gendreau",
+            "email": "pierluc.gendreau@gmail.com",
+            "homepage": "http://zertz.ca"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "2.3.*",
+        "egeloen/ckeditor-bundle": "2.1.*",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "sonata-project/user-bundle": "dev-master",
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "zertz/photo-bundle": "dev-master",
+        "zertz/sort-bundle": "dev-master",
+        "zertz/user-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Zertz\\BlogBundle": "" }
+    },
+    "target-dir": "Zertz/BlogBundle"
+}
